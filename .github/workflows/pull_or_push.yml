@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       if: ${{github.event_name == 'pull_request'}}
-        - uses: actions/checkout@v3
-        - name: "pull_request"
-          run: echo "C'est un pull_request"
+      - uses: actions/checkout@v3
+      - name: "pull_request"
+        run: echo "C'est un pull_request"
