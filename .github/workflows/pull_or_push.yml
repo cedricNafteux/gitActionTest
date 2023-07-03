@@ -4,11 +4,12 @@ on: [push,pull_request]
 
 env:
   PUSH: push
-  PULL_REQUETE: pull
+  PULL_REQUETE: pull_request
 
 jobs:
   on_push:
     runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push'}}
     steps:
       - uses: actions/checkout@v3
       - name: "push"
@@ -16,8 +17,8 @@ jobs:
 
   on_pull_requete:
     runs-on: ubuntu-latest
+    if: ${{github.event_name == 'pull_request'}}
     steps:
-      if: ${{github.event_name == 'pull_request'}}
       - uses: actions/checkout@v3
       - name: "pull_request"
         run: echo "C'est un pull_request"
