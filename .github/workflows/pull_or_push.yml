@@ -1,21 +1,23 @@
 name: pull_or_push
 
-on: [push,pull]
+on: [push,pull_request]
 
 env:
-  REQUETE: github.event_name
+  PUSH: push
+  PULL_REQUETE: pull
 
 jobs:
-  push:
+  on_push:
     runs-on: ubuntu-latest
-    if: ${{github.event_nameE == 'push'}}
+    steps:
       - uses: actions/checkout@v3
       - name: "push"
         run: echo "C'est un push"
 
-  pull_requete:
+  on_pull_requete:
     runs-on: ubuntu-latest
-    if: ${{github.event_name == 'pull_request'}}
-      - uses: actions/checkout@v3
-      - name: "pull_request"
-        run: echo "C'est un pull_request"
+    steps:
+      if: ${{github.event_name == 'pull_request'}}
+        - uses: actions/checkout@v3
+        - name: "pull_request"
+          run: echo "C'est un pull_request"
