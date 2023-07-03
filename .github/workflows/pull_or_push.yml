@@ -1,0 +1,24 @@
+name: pull_or_push
+
+on: [push]
+env:
+  REQUETE: push
+
+on:
+env:
+  REQUETE: pull
+
+jobs:
+  push_or_pull:
+    runs-on: ubuntu-latest
+    if: ${{env.REQUETE == 'pull'}}
+      - uses: actions/checkout@v3
+      - name: "push requete"
+        run: echo "C'est un push"
+
+    pull_requete:
+      runs-on: ubuntu-latest
+      if: ${{env.REQUETE == 'pull'}}
+        - uses: actions/checkout@v3
+        - name: "pull requete"
+        run: echo "C'est un pull"
