@@ -12,8 +12,7 @@ jobs:
       ENTREPRISE: Semifir
     steps:
       - name: Dit Bonjour
-        run: echo "Salut $NAME ! tu travail chez $ENTREPRISE ?"
-        alors bon $DAY à toi
+        run: echo "Salut $NAME ! tu travail chez $ENTREPRISE ? alors bon $DAY à toi"
         env:
           DAY: Lundi
       -name: Lundi ?
@@ -22,5 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Dit au revoir"
-        run: echo "au revoir $NAME ! tu travail
-        pour quelle entreprise ? $ENTREPRISE ?"
+        run: echo "au revoir $NAME ! tu travail pour quelle entreprise ? $ENTREPRISE ?"
