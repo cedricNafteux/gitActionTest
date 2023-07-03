@@ -1,12 +1,9 @@
 name: pull_or_push
 
-on: [push]
-env:
-  REQUETE: push
+on: [push,pull]
 
-on:
 env:
-  REQUETE: pull
+  REQUETE: github.event_name
 
 jobs:
   push_or_pull:
@@ -16,9 +13,9 @@ jobs:
       - name: "push requete"
         run: echo "C'est un push"
 
-    pull_requete:
-      runs-on: ubuntu-latest
-      if: ${{env.REQUETE == 'pull'}}
-        - uses: actions/checkout@v3
-        - name: "pull requete"
-        run: echo "C'est un pull"
+  pull_requete:
+    runs-on: ubuntu-latest
+    if: ${{env.REQUETE == 'pull'}}
+      - uses: actions/checkout@v3
+      - name: "pull requete"
+      run: echo "C'est un pull"
