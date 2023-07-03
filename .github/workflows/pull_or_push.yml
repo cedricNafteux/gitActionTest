@@ -6,16 +6,16 @@ env:
   REQUETE: github.event_name
 
 jobs:
-  push_or_pull:
+  push:
     runs-on: ubuntu-latest
-    if: ${{env.REQUETE == 'pull'}}
+    if: ${{github.event_nameE == 'push'}}
       - uses: actions/checkout@v3
-      - name: "push requete"
+      - name: "push"
         run: echo "C'est un push"
 
   pull_requete:
     runs-on: ubuntu-latest
-    if: ${{env.REQUETE == 'pull'}}
+    if: ${{github.event_name == 'pull_request'}}
       - uses: actions/checkout@v3
-      - name: "pull requete"
-      run: echo "C'est un pull"
+      - name: "pull_request"
+        run: echo "C'est un pull_request"
