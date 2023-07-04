@@ -3,22 +3,40 @@ name: pull_or_push
 on: [push,pull_request]
 
 env:
-  PUSH: push
-  PULL_REQUETE: pull_request
+  #PUSH: push
+  #PULL_REQUETE: pull_request
+  PUSH: c'est un push
+  PULL_REQUETE: c'est une pull_request
 
 jobs:
-  on_push:
+  push:
     runs-on: ubuntu-latest
-    if: ${{github.event_name == 'push'}}
     steps:
       - uses: actions/checkout@v3
-      - name: "push"
-        run: echo "C'est un push"
+      - name: Push
+        run: echo "$PUSH"
 
-  on_pull_requete:
+  pull_request:
     runs-on: ubuntu-latest
     if: ${{github.event_name == 'pull_request'}}
     steps:
       - uses: actions/checkout@v3
-      - name: "pull_request"
-        run: echo "C'est un pull_request"
+      - name: Pull request
+        run: echo "$PULL_REQUETE"
+
+# jobs:
+#   on_push:
+#     runs-on: ubuntu-latest
+#     if: ${{github.event_name == 'push'}}
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: "push"
+#         run: echo "C'est un push"
+
+#   on_pull_requete:
+#     runs-on: ubuntu-latest
+#     if: ${{github.event_name == 'pull_request'}}
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: "pull_request"
+#         run: echo "C'est un pull_request"

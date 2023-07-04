@@ -1,0 +1,10 @@
+name: exo_trigger_01
+on:
+  issue:
+    types: [opened]
+jobs:
+  trigger_01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "exo trigger 01"
+        run: echo "issue créée"
