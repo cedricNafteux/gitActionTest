@@ -2,15 +2,12 @@ name: exo_trigger_03
 
 on:
   workflow_run:
-    workflows: ["exo_trigger_02"]
-    types:
-      - completed
+    workflows: [exo_trigger_02]
+    types: [completed]
 
 jobs:
-  build:
+  next_one:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3   
-      - name: next one
+      - name: "next one"
         run: echo "next one"

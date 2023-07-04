@@ -4,18 +4,14 @@ on: workflow_dispatch
 
 jobs:
   premier:
-    name: premier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: premier jobs
         run: echo "premier jobs lancé"
 
   second:
-    name: second
     needs: premier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: second jobs
         run: echo "second jobs lancé"
