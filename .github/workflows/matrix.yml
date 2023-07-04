@@ -1,0 +1,15 @@
+name: exo_matrix
+on: workflow_dispatch
+jobs:
+  exo_matrix:
+    name: exo_matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        fruits: [fraise, abicot, poire, mangue]
+        noms: [riri, fifi, loulou ]
+    steps:
+      - name: liste_fruits_noms
+        uses: actions/checkout@v3
+        run: echo "${{matrix.noms}} aime les ${{matrix.fruits}}"
