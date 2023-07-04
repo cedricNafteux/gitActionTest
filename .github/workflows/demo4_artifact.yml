@@ -2,7 +2,7 @@ name: upload_Artifact
 on: workflow_dispatch
 jobs:
   upload:
-    name: Upload
+    name: upload
     runs-on: ubuntu-latest
     steps:
       # creation du fichier
@@ -16,3 +16,18 @@ jobs:
         with:
           name: artifact
           path: artifact.txt
+  download:
+    needs: upload
+    name: download
+    runs-on: ubuntu-latest
+    steps:
+      - name: download_file
+      # on récupère le fichier via l'action download-artifact
+        uses: actions/download-artifact@v3
+        with:
+        # on lui précise le nom de l'artifact à récupérer, sinon
+        # par defaut ce sera "artifact"
+          name: artifact
+      - name: read-file
+      # commande linux pour lire la contenu d'un fichier
+        run: cat artifact.txt
