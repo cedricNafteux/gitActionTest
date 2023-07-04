@@ -1,0 +1,12 @@
+name: exo_trigger_02
+on:
+  pull_request:
+    types: [closed]
+jobs:
+  trigger_02:
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'pull_request'}}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Pull request merged
+        run: echo "merged"
