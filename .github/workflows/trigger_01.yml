@@ -1,6 +1,6 @@
 name: exo_trigger_01
 on:
-  issue:
+  issues:
     types: [opened]
 jobs:
   trigger_01:
