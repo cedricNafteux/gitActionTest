@@ -1,8 +1,8 @@
 name: nf8_do_01
-on:
+on: 
   pull_request:
     branches:
-      - 'features/*'
+      - 'feature/*'
     types:
       - opened
       - synchronize
