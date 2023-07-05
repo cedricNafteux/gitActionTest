@@ -1,12 +1,24 @@
 name: nf4-do-01
-on: workflow_dispatch
+# on: workflow_dispatch
+on:
+  issues:
+    types:
+      - assigned
 
 jobs:
   nf4-do-01:
     runs-on: ubuntu-latest
+    if
     steps:
-      - name: Checkout code
+      - name: checkout
         uses: actions/checkout@v3
       - name: create_branche
         run: |
-          git branch testing
+          issue_number=$(echo "${{ github.event.issue.number }}")
+          branch_name="issue-$issue_number"
+          git checkout -b "$branch_name"
+      - name: Push branch
+        run: |
+          git push origin "$branch_name"
+
+
