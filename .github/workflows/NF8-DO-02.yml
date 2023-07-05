@@ -1,8 +1,11 @@
 name: nf8_do_02
-on:
+on: 
   pull_request:
-    branches: [feature]
-    types: [opened, synchronize]
+    branches:
+      - 'feature/*'
+    types:
+      - opened
+      - synchronize
 jobs:
   nf8_do_02:
     runs-on: ubuntu-latest
