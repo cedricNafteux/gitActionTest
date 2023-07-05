@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  test:
+  nf8_do_01:
     runs-on: ubuntu-latest
     strategy:
       matrix:
