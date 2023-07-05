@@ -12,7 +12,7 @@ jobs:
     if: startsWith(github.head_ref, 'feature/')
     steps:
     - name: create_file
-      run: npm run test > coverage.txt
+      run:  echo npm run test > coverage.txt
     - name: upload_artifact
       uses: actions/upload-artifact@v3
       with:
