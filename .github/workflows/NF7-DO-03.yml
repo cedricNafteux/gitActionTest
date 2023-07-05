@@ -1,7 +1,7 @@
 name: nf7_do_03
-on: workflow_dispatch
-  # pull_request:
-  #   branches: [ feature,hotfix ]
+on:
+  pull_request:
+    branches: [ feature,hotfix ]
 
 jobs:
   conventionnal_commits:
