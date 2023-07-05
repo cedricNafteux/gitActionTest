@@ -4,7 +4,7 @@ on:
     branches: [feature]
     types: [opened, synchronize]
 jobs:
-  test:
+  nf8_do_02:
     runs-on: ubuntu-latest
     strategy:
       matrix:
