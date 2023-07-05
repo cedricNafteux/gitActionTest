@@ -1,9 +1,9 @@
 name: exo_trigger_03
 
-on:
-  workflow_run:
-    workflows: [exo_trigger_02]
-    types: [completed]
+on: workflow_dispatch
+  #workflow_run:
+   # workflows: [exo_trigger_02]
+   # types: [completed]
 
 jobs:
   next_one:
