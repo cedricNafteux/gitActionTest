@@ -1,7 +1,7 @@
 name: nf7_do_03
 on:
   pull_request:
-    branches: [ features,hotfix ]
+    branches: [ feature,hotfix ]
 
 jobs:
   conventionnal_commits:

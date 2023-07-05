@@ -1,8 +1,7 @@
 name: nf8_do_02
 on:
   pull_request:
-    branches:
-      - develop
+    branches: [feature]
     types: [opened, synchronize]
 jobs:
   test:
