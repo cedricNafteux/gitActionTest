@@ -1,7 +1,7 @@
 name: nf8_do_01
 on:
   pull_request:
-    branches: [feature]
+    branches: [feature/*]
     types: [opened, synchronize]
 
 jobs:
@@ -17,5 +17,4 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      #- run: npm run test
-      - run: echo nf8_do_01
+      - run: npm run test
