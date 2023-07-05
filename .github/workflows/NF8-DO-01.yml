@@ -1,11 +1,11 @@
 name: nf8_do_01
-on: workflow_dispatch
-  # pull_request:
-  #   branches:
-  #     - 'features/*'
-  #   types:
-  #     - opened
-  #     - synchronize
+on: 
+  pull_request:
+    branches:
+      - 'feature/*'
+    types:
+      - opened
+      - synchronize
 
 jobs:
   nf8_do_01:
