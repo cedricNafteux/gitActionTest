@@ -2,7 +2,7 @@ name: nf8_do_01
 on:
   pull_request:
     branches:
-      - 'feature/*'
+      - 'features/*'
     types:
       - opened
       - synchronize
