@@ -1,7 +1,7 @@
 name: pull_or_push
 
-on: [push,pull_request]
-
+# on: [push,pull_request]
+on: workflow_dispatch
 env:
   #PUSH: push
   #PULL_REQUETE: pull_request

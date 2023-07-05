@@ -1,0 +1,20 @@
+name: nf8_do_02
+on:
+  pull_request:
+    branches: [feature]
+    types: [opened, synchronize]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+    if: startsWith(github.head_ref, 'feature/')
+    steps:
+    - name: create_file
+      run: npm run test > coverage.txt
+    - name: upload_artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage
+        path: coverage.txt
