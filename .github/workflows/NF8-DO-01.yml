@@ -1,8 +1,11 @@
 name: nf8_do_01
 on:
   pull_request:
-    branches: [feature]
-    types: [opened, synchronize]
+    branches:
+      - 'features/*'
+    types:
+      - opened
+      - synchronize
 
 jobs:
   nf8_do_01:
