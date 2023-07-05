@@ -1,7 +1,7 @@
 name: exo_trigger_02
-on:
-  pull_request:
-    types: [closed]
+on: workflow_dispatch
+  #pull_request:
+    #types: [closed]
 jobs:
   trigger_02:
     if: github.event.pull_request.merged == true
