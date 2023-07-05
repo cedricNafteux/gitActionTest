@@ -7,7 +7,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        fruits: [fraise, abicot, poire, mangue]
+        fruits: [fraises, abicots, poires, mangues]
         noms: [riri, fifi, loulou ]
     steps:
       - name: liste_fruits_noms

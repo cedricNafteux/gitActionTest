@@ -1,0 +1,16 @@
+name: nf7_do_03
+on:
+  pull_request:
+    branches: [ features,hotfix ]
+
+jobs:
+  conventionnal_commits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: webiny/action-conventional-commits@v1.1.0
+        # optional, required for private repos
+        # with:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# https://github.com/webiny/action-conventional-commits

@@ -1,0 +1,21 @@
+name: create_branche
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  create_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create branch
+        run: |
+          git config user.name "Your Name"
+          git config user.email "your-email@example.com"
+          git checkout -b new-branch
+
+      - name: Push branch
+        run: |
+          git push origin new-branch
