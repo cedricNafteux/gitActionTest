@@ -2,7 +2,7 @@ name: nf4-do-01
 on: workflow_dispatch
 
 jobs:
-  create_branch:
+  nf4-do-01:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
