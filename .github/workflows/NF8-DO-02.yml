@@ -1,7 +1,7 @@
 name: nf8_do_02
 on: 
   pull_request:
-    branches:
+    branches: 
       - 'feature/*'
     types:
       - opened
